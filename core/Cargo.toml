@@ -1,0 +1,25 @@
+[package]
+name = "gitit-core"
+version = "0.1.0"
+edition = "2021"
+publish = false
+
+[lib]
+name = "gitit_core"
+crate-type = ["staticlib", "rlib"]
+
+[dependencies]
+gix = { version = "0.66", default-features = false, features = ["max-performance-safe", "revision", "blob-diff"] }
+similar = "2.6"
+thiserror = "1.0"
+swift-bridge = "0.1"
+tree-sitter = "0.22"
+tree-sitter-swift = "0.5"
+tree-sitter-kotlin = "0.3.8"
+
+[build-dependencies]
+swift-bridge-build = "0.1"
+
+[profile.release]
+lto = "thin"
+codegen-units = 1

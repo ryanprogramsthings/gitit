@@ -1,0 +1,5 @@
+module CGititCore {
+    header "GititCore.h"
+    header "SwiftBridgeCore.h"
+    export *
+}
